@@ -1,0 +1,16 @@
+{
+  "name": "Movix Blog - Films et Séries",
+  "version": "1.0",
+  "description": "Extension pour récupérer les films et séries de Movix.blog.",
+  "repository": "https://github.com/95kre/movix-blog-extension",
+  "type": "html",
+  "sources": [
+    {
+      "url": "https://movix.blog",
+      "name": "Movix Blog",
+      "lang": "fr",
+      "type": "html",
+      "filter": "films"
+    }
+  ]
+}

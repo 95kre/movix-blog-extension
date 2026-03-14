@@ -1,0 +1,26 @@
+function getMovies() {
+  fetch("https://movix.blog")
+    .then(response => response.text())
+    .then(html => {
+      let parser = new DOMParser();
+      let doc = parser.parseFromString(html, "text/html");
+
+      // Récupère tous les films dans une classe .movie-title (tu devras peut-être l'adapter)
+      let movieElements = doc.querySelectorAll(".movie-title"); // Ajuste ce sélecteur CSS
+      let movies = [];
+
+      movieElements.forEach(movie => {
+        let title = movie.textContent.trim();
+        let url = movie.getAttribute("href");
+        
+        // Ajoute chaque film à la liste
+        movies.push({
+          title: title,
+          url: "https://movix.blog" + url
+        });
+      });
+
+      // Affiche les films dans la console pour vérifier
+      console.log(movies);  // Affiche les films récupérés dans la console
+    });
+}
